@@ -21,15 +21,15 @@ const corsOptions = {
     }
   },
 };
-// app.use(cors({ ...corsOptions, credentials: true }));
-app.use(cors());
+app.use(cors({ ...corsOptions, credentials: true }));
+// app.use(cors());
 
 app.get("/", (req, res) => {
   res.status(200).json({ msg: "Welcome to the APIs world." });
 });
 
 // al routes
-app.use("/api", router);
+app.use(router);
 
 mongoose.connect(
   "mongodb+srv://alaraby:Alaraby12345@alaraby.4kkcg.mongodb.net/?retryWrites=true&w=majority"

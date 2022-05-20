@@ -24,6 +24,9 @@ const corsOptions = {
 app.use(cors({ ...corsOptions, credentials: true }));
 // app.use(cors());
 
+app.get("/", (req, res) => {
+  res.status(200).json({ msg: "Welcome to APIs world" });
+});
 // al routes
 app.use(router);
 

@@ -30,7 +30,7 @@ router
   .route("/factories")
   .get(async (req, res) => {
     const factories = await Factory.find({});
-    res.status(200).json({ factories });
+    res.status(200).json(factories);
   })
   .post(async (req, res) => {
     const { name } = req.body;
@@ -43,7 +43,7 @@ router
   .route("/groups")
   .get(async (req, res) => {
     const groups = await Group.find({});
-    res.status(200).json({ groups });
+    res.status(200).json(groups);
   })
   .post(async (req, res) => {
     const { name, factoryId } = req.body;
@@ -56,7 +56,7 @@ router
   .route("/machines")
   .get(async (req, res) => {
     const machines = await Machine.find({});
-    res.status(200).json({ machines });
+    res.status(200).json(machines);
   })
   .post(async (req, res) => {
     const { name, factoryId } = req.body;
@@ -69,7 +69,7 @@ router
   .route("/machinesCategory")
   .get(async (req, res) => {
     const machinesCategory = await MachineCategory.find({});
-    res.status(200).json({ machinesCategory });
+    res.status(200).json(machinesCategory);
   })
   .post(async (req, res) => {
     const { name, machineId } = req.body;
@@ -82,7 +82,7 @@ router
   .route("/models")
   .get(async (req, res) => {
     const models = await Model.find({});
-    res.status(200).json({ models });
+    res.status(200).json(models);
   })
   .post(async (req, res) => {
     const { name, machineId, machineCategoryId } = req.body;
@@ -108,7 +108,7 @@ router
   .route("/requests")
   .get(async (req, res) => {
     const requests = await Request.find({});
-    res.status(200).json({ requests });
+    res.status(200).json(requests);
   })
   .post(async (req, res) => {
     const { userId, machineId, feedback, status } = req.body;
@@ -121,7 +121,7 @@ router
   .route("/roles")
   .get(async (req, res) => {
     const roles = await Role.find({});
-    res.status(200).json({ roles });
+    res.status(200).json(roles);
   })
   .post(async (req, res) => {
     const { name } = req.body;
@@ -134,7 +134,7 @@ router
   .route("/users")
   .get(async (req, res) => {
     const users = await User.find({});
-    res.status(200).json({ users });
+    res.status(200).json(users);
   })
   .post(async (req, res) => {
     const { roleId, username, password, email, factoryId } = req.body;

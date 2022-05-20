@@ -30,7 +30,7 @@ app.use(router);
 mongoose.connect(
   "mongodb+srv://alaraby:Alaraby12345@alaraby.4kkcg.mongodb.net/?retryWrites=true&w=majority"
 );
-app.listen(5000, () =>
+app.listen(process.env.PORT || 5000, () =>
   console.log(
     "*******************************\n-----------Running-------------\n*******************************"
   )

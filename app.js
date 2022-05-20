@@ -7,7 +7,7 @@ const router = require("./routes/routes");
 
 app.use(express.json());
 
-app.use(cors({ origin: "http://localhost:4200", credentials: true }));
+app.use(cors({ origin: process.env.API_FRONT, credentials: true }));
 // app.use(cors());
 
 app.get("/", (req, res) => {

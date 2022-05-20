@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ msg: "Welcome to APIs world" });
 });
 // al routes
-app.use(router);
+app.use("/api", router);
 
 mongoose.connect(
   "mongodb+srv://alaraby:Alaraby12345@alaraby.4kkcg.mongodb.net/?retryWrites=true&w=majority"

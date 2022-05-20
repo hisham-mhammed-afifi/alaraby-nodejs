@@ -7,11 +7,7 @@ const router = require("./routes/routes");
 
 app.use(express.json());
 
-const whitelist = [
-  "http://localhost:4200",
-  "http://localhost:3000",
-  "http://localhost:5000",
-];
+const whitelist = ["http://localhost:4200", "http://localhost:3000"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -21,8 +17,8 @@ const corsOptions = {
     }
   },
 };
-// app.use(cors({ ...corsOptions, credentials: true }));
-app.use(cors());
+app.use(cors({ ...corsOptions, credentials: true }));
+// app.use(cors());
 
 app.get("/", (req, res) => {
   res.status(200).json({ msg: "Welcome to APIs world" });

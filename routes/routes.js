@@ -99,8 +99,8 @@ router
   })
   .post(async (req, res) => {
     const { name, groupId, factoryId } = req.body;
-    await Question.create({ name, groupId, factoryId });
-    res.status(201).json({ msg: "added" });
+    const question = await Question.create({ name, groupId, factoryId });
+    res.status(201).json(question);
   });
 
 // requests
@@ -138,8 +138,14 @@ router
   })
   .post(async (req, res) => {
     const { roleId, username, password, email, factoryId } = req.body;
-    await User.create({ roleId, username, password, email, factoryId });
-    res.status(201).json({ msg: "added" });
+    const user = await User.create({
+      roleId,
+      username,
+      password,
+      email,
+      factoryId,
+    });
+    res.status(201).json(user);
   });
 
 module.exports = router;
